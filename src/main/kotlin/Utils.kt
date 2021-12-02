@@ -1,3 +1,4 @@
+import java.io.File
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -12,5 +13,9 @@ object Utils {
             e.printStackTrace()
         }
         return result
+    }
+
+    fun readInputToList(fileName: String): List<String> {
+        return File("input2.txt").useLines { it.toList() }.stream().collect(Collectors.toList())
     }
 }
