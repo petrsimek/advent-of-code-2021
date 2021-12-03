@@ -16,6 +16,6 @@ object Utils {
     }
 
     fun readInputToList(fileName: String): List<String> {
-        return File("input2.txt").useLines { it.toList() }.stream().collect(Collectors.toList())
+        return File(fileName).useLines { it.toList() }.stream().collect(Collectors.toList())
     }
 }
