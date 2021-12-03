@@ -35,13 +35,13 @@ object Day3 {
     }
 
     private fun calculateRating(inputList: List<String>, higher: Boolean): Int {
-        var l = inputList.toMutableList()
+        var filteredList = inputList.toMutableList()
         loop@ for (i in 0 until inputList[0].length) {
-            val startOxy = getRate(l, higher)
-            l = filterByBitAtPos(l, i, startOxy.get(i))
-            if (l.size == 1) break@loop
+            val startRate = getRate(filteredList, higher)
+            filteredList = filterByBitAtPos(filteredList, i, startRate[i])
+            if (filteredList.size == 1) break@loop
         }
-        return parseInt(l.get(0), 2)
+        return parseInt(filteredList[0], 2)
     }
 
     private fun partTwo(inputList: List<String>): Int {
