@@ -18,4 +18,8 @@ object Utils {
     fun readInputToList(fileName: String): List<String> {
         return File(fileName).useLines { it.toList() }.stream().collect(Collectors.toList())
     }
+
+    fun readInputToBLocks(fileName: String): List<String> {
+        return File(fileName).readText(Charsets.UTF_8).split("\n\n")
+    }
 }
