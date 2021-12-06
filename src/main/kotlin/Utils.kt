@@ -22,4 +22,8 @@ object Utils {
     fun readInputToBLocks(fileName: String): List<String> {
         return File(fileName).readText(Charsets.UTF_8).split("\n\n")
     }
+
+    fun readInputToListOfLongsFromOneLine(fileName: String): List<Long> {
+        return File(fileName).readText(Charsets.UTF_8).split(",").map { it.toLong() }
+    }
 }
