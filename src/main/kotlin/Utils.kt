@@ -26,4 +26,8 @@ object Utils {
     fun readInputToListOfLongsFromOneLine(fileName: String): List<Long> {
         return File(fileName).readText(Charsets.UTF_8).split(",").map { it.toLong() }
     }
+
+    fun readInputToListOfIntsFromOneLine(fileName: String): List<Int> {
+        return File(fileName).readText(Charsets.UTF_8).split(",").map { it.toInt() }
+    }
 }
